@@ -1,0 +1,46 @@
+.small-box {
+    width: 100px;
+    padding: 10px;
+    border: 2px solid red;
+    margin: 5px;
+}
+
+.medium-box {
+    width: 10rem;
+    padding: 1rem;
+    border: 0.5rem solid green;
+    margin: 2rem;
+}
+
+.large-box {
+    width: 50%;
+    padding: 5%;
+    border: 10px solid blue;
+    margin: 2%;
+}
+
+.box-sizing {
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+    border: 2px solid red;
+
+}
+
+.content-box { 
+    width: 200px;
+    height: 200px;
+    border: 2px solid red;
+}
+
+
+
+/* *Satuan CSS
+    - absolute : px (pixel), cm (centimeter), mm (milimeter), inc (inches)
+    - relative : % (persentase dari kontainer induk), 
+        em (relative terhadap ukuran font elemen), 
+        rem (relative terhadap ukuran default/root font-size = 16px), 
+        vw (persentase dari lebar viewport), 
+        vh (persentase dari tinggi viewport)
+        etc..
+*/
