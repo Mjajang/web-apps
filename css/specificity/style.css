@@ -1,0 +1,61 @@
+/* *ini adalah universal selector */
+* {
+    color: chartreuse;
+}
+
+/* *ini adalah class selector */
+.important-text {
+    color: red;
+}
+
+div  p {
+    color: blue ;
+}
+
+/* *ini adalah type selector */
+p {
+    color: brown;
+    font-size: 80px;
+}
+
+/* menggabungkan dua class menjadi menjumlahkan yang tadinya (0,1,0) menjadi (0,2,0) */
+.text.important-text {
+    color: violet;
+}
+
+p span {
+    font-size: 30px;
+}
+
+/* yang terimplement terkahir yakni font-weight:300 */
+#special {
+    font-weight: 800;
+}
+
+#special {
+    font-weight: 300;
+}
+
+/* *inline spesifitynya teroverride oleh !important */
+.inline  {
+    font-size: 30px !important; 
+}
+
+#inline-id {
+    font-size: 60px;
+}
+
+
+/* inheritance spesifity */
+div {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+/* Menghitung spesifity:
+*catatan nilainya  bisa dibaca dengan mengilangkan koma juga seperti seribu, seratus, sepuluh atau satu
+- (paling tinggi) => gaya inline css (1,0,0,0)
+- ID Selector => (0,1,0,0)
+- Class, Psudo Class dan atribut selector => (0,0,1,0)
+- (paling rendah) => Tag atau type selector (0,0,0,1)
+*/

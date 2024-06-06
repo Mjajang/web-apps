@@ -1,0 +1,51 @@
+[type="text"] {
+    border: 2px solid blueviolet;
+}
+
+input[type="email"] {
+    padding: 28px;
+    font-size: 20px;
+}
+
+section .primary {
+    background-color: blue;
+}
+
+section .secondary {
+    background-color: red;
+}
+
+section > [type="number"] {
+    padding: 20px 0px;
+}
+
+.secondary {
+    color: tomato;
+}
+
+.highlight {
+    font-size: 80px;
+}
+
+[href="https://google.com"] {
+    color: blueviolet;
+    text-decoration: none;
+}
+
+/* prefix ^= */
+a[href^="https:"] {
+    font-size: 30px;
+}
+
+[href^="http"] {
+    font-weight: 800;
+}
+
+/* suffix $= */
+img[src$=".webp"] {
+    height: 500px;
+}
+
+[href$=".com"] {
+    color: aqua;
+}
