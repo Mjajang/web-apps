@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+}
+
+aside {
+  width: 300px;
+  background-color: brown;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+article {
+  display: flex;
+  flex: 1;
+  background-color: gray;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+header,
+footer {
+  background-color: purple;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
