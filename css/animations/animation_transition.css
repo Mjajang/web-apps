@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+
+  transition: background-color 1s ease, border 1s ease, border-radius 1s ease;
+  transition-delay: 0s, 0.5, 1s;
+  animation: rotateIt 3s infinite ease-in-out 0.5s alternate;
+}
+
+.box:hover {
+  background-color: red;
+  border: 5px solid black;
+  border-radius: 50%;
+}
+
+@keyframes rotateIt {
+  from {
+    transform: translate(0px, 0px);
+    /* background-color: purple; */ /* Tidak boleh propertynya sama dengan property yang digunakan  di transition gunakan salah satunya antara di transition atau di animation */
+  }
+  to {
+    transform: translate(100px, 100px);
+    /* background-color: yellow; */
+  }
+}

@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+.transition-delay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.transition-delay > button {
+  background-color: purple;
+  color: white;
+
+  transition: transform ease, background-color ease, border ease; /* transition-property transition-duration transition-timing-function */
+  transition-duration: 1s, 1s, 1s;
+  transition-delay: 0s, 0.5s, 1s;
+}
+
+.transition-delay > button:hover {
+  background-color: red;
+  transform: scale(1.2) rotate(360deg);
+  border: 2px solid yellow;
+}

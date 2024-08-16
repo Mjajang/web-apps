@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+.circle {
+  transition: fill 0.5s ease;
+}
+
+.circle:hover {
+  fill: purple;
+}
+
+@keyframes draw {
+  from {
+    stroke-dasharray: 0, 251.2;
+  }
+  to {
+    stroke-dasharray: 251.2, 0;
+  }
+}
+
+.circle {
+  stroke: black;
+  stroke-width: 4;
+  stroke-dasharray: 251.2;
+  animation: draw 2s ease-in-out /* infinite alternate */ forwards;
+}
