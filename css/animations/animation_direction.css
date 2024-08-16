@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container-animation-direction {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f7f8;
+  margin: 10px 0;
+}
+
+.animation-direction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animation-direction > div {
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.animation-direction > .normal {
+  animation: move 3s infinite normal;
+  animation-timing-function: linear;
+}
+
+.animation-direction > .reverse {
+  animation: move 3s infinite reverse;
+  animation-timing-function: linear;
+}
+
+.animation-direction > .alternate {
+  animation: move 3s infinite alternate; /* consume 6s to finish the animation */
+  animation-timing-function: linear;
+}
+
+.animation-direction > .alternate-back {
+  animation: moveBack 3s infinite alternate; /* consume 3s to finish the animation */
+  animation-timing-function: linear;
+}
+
+.animation-direction > .continous {
+  animation: spin 3s infinite normal;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(100px);
+  }
+}
+
+@keyframes moveBack {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(100px);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

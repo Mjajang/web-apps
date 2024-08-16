@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* animation */
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.slide {
+  animation-name: slide;
+}
+
+.toRed {
+  animation-name: changeColor;
+}
+
+.rotate {
+  animation-name: rotateAnimation;
+}
+
+.toHeight {
+  animation-name: incraseHeight;
+}
+
+.all {
+  animation-name: allAnimation;
+}
+
+/* Animation Name */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(300px);
+  }
+}
+
+@keyframes changeColor {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: purple;
+  }
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes incraseHeight {
+  from {
+    height: 100px;
+  }
+  to {
+    height: 300px;
+  }
+}
+
+@keyframes allAnimation {
+  from {
+    transform: translateX(0) rotate(0deg);
+    background-color: white;
+    height: 100px;
+  }
+  to {
+    transform: translateX(300px) rotate(720deg);
+    background-color: purple;
+    height: 300px;
+  }
+}

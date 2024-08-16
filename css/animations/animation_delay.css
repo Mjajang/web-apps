@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container-animation-delay {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f7f8;
+}
+
+.animation-delay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animation-delay > div {
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+
+.animation-delay > .box-1 {
+  animation-delay: 1s;
+}
+
+.animation-delay > .box-2 {
+  animation-delay: 1.5s;
+}
+
+.animation-delay > .box-3 {
+  animation-delay: 2s;
+}
+
+.animation-delay > .box-4 {
+  animation-delay: 2.5s;
+}
+
+.animation-delay > .box-5 {
+  animation-delay: 3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(100px) rotate(45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 1;
+  }
+}
