@@ -20,14 +20,27 @@
 }
 
 .switch-days {
-  grid-column-start: 11;
+  grid-column-start: 1;
   grid-column-end: 13;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
 }
 
 .switch-days > i {
   margin-left: 10px;
+}
+
+.switch-days > ul {
+  display: flex;
+  gap: 10px;
+}
+
+.switch-days > ul > li {
+  list-style-type: none;
+}
+
+.switch-days > ul > li > a {
+  text-decoration: none;
 }
 
 .title {
