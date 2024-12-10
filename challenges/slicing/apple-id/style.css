@@ -1,0 +1,688 @@
+@font-face {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Helvetica"), url("./assets/Fonts/Helvetica.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Helvetica Oblique";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Helvetica Oblique"), url("./assets/Fonts/Helvetica-Oblique.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Helvetica Compressed";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Helvetica Compressed"), url("./assets/Fonts/helvetica-compressed-5871d14b6903a.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Helvetica Rounded Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Helvetica Rounded Bold"), url("./assets/Fonts/helvetica-rounded-bold-5871d05ead8de.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Helvetica"), url("./assets/Fonts/Helvetica-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Helvetica Bold Oblique";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Helvetica Bold Oblique"), url("./assets/Fonts/Helvetica-BoldOblique.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Helvetica Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Helvetica Light"), url("./assets/Fonts/helvetica-light-587ebe5a59211.woff") format("woff");
+}
+
+/* General Styles */
+
+:root {
+  --color-primary: rgb(0, 113, 227);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica";
+  font-weight: 400;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 11px 21px;
+  border-radius: 980px;
+  border: var(--color-primary) 1px solid;
+  font-family: "Helvetica Light";
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: 1px;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-white {
+  border-color: #fff;
+  background-color: #fff;
+  color: #000;
+}
+
+.btn-white:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px) saturate(180%);
+  z-index: 40;
+}
+.navbar.container {
+  width: 980px;
+  margin: 0 auto;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  line-height: 1;
+  font-size: 12px;
+  font-weight: 400;
+}
+.navbar-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 20px;
+}
+.navbar-mobile {
+  display: none;
+}
+.menu-mobile {
+  display: none;
+}
+
+.icon-apple {
+  width: 15px;
+  height: 44px;
+}
+
+.icon-search {
+  width: 15px;
+  height: 44px;
+}
+
+.navbar a {
+  color: #000;
+  text-decoration: none;
+  font-family: "Helvetica Light";
+}
+
+/* Section iPhone-15-black-white */
+#iphone-15-black {
+  margin-top: 46px;
+  background-image: url("./assets/Image/hero_iphone.jpg");
+}
+
+#iphone-15-white {
+  margin-top: 20px;
+  background-image: url("./assets/Image/hero_iphone_white.jpg");
+}
+
+#macbook-air {
+  background-image: url("./assets/Image/macbook_air.jpg");
+  margin-top: 20px;
+}
+
+#iphone-15-white p {
+  color: #000;
+}
+
+#iphone-15-white h1 {
+  color: #000;
+}
+
+#macbook-air h1 {
+  color: #000;
+}
+
+#macbook-air h5 {
+  color: #000;
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+
+#macbook-air p {
+  color: #6e6e73;
+  font-size: 21px;
+}
+
+.product {
+  overflow: hidden;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 580px;
+}
+
+.product-content {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.product-content h1 {
+  font-family: "Helvetica";
+  font-size: 56px;
+  line-height: 1;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.product-content p {
+  font-family: "Helvetica";
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.product-content .cta-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Section Grid Products */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.grid-items-product {
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  height: 580px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.watch-nine {
+  background-image: url("./assets/Image/apple_watch.jpg");
+}
+
+.watch-ultra {
+  background-image: url("./assets/Image/apple_watch_white.jpg");
+}
+
+.ipad {
+  background-image: url("./assets/Image/ipad.jpg");
+}
+
+.ipad-pro {
+  background-image: url("./assets/Image/ipad_black.jpg");
+}
+
+.macbook-pro {
+  background-image: url("./assets/Image/macbook_white.jpg");
+}
+
+.airpods-pro {
+  background-image: url("./assets/Image/airpods.jpg");
+}
+
+.watch-nine h5 {
+  color: #fff;
+}
+
+.watch-ultra h5 {
+  color: #000;
+}
+
+.ipad h2 {
+  color: #000;
+}
+
+.ipad p {
+  color: #000;
+}
+
+.ipad-pro h2 {
+  color: #fff;
+}
+
+.ipad-pro p {
+  color: #fff;
+}
+
+.macbook-pro h2 {
+  color: #000;
+}
+
+.macbook-pro p {
+  color: #000;
+}
+
+.airpods-pro h2 {
+  color: #fff;
+}
+
+.airpods-pro p {
+  color: #fff;
+}
+
+.grid-items-product img {
+  margin-top: 60px;
+}
+
+.product-item h2 {
+  margin-top: 53px;
+  margin-bottom: 4px;
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.product-item p {
+  margin-bottom: 18px;
+  font-size: 21px;
+  line-height: 1;
+  letter-spacing: normal;
+  font-family: "Helvetica Light";
+}
+.grid-items-product h5 {
+  font-family: "Helvetica Light";
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 400;
+  margin-bottom: 18px;
+}
+
+.logo-product {
+  height: 58px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+/* Carousel */
+
+#apple-tv {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 668px;
+  margin-bottom: 12px;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  /* visibility: hidden; */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 55px;
+  padding-bottom: 50px;
+}
+
+.carousel-content p {
+  color: #fff;
+  font-family: "Helvetica Light";
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.carousel-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.carousel-control span {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 8px;
+  width: 8px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.carousel-control .active {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-item.active {
+  visibility: visible;
+  z-index: 22;
+  transform: translateX(0%);
+  position: relative;
+}
+
+.carousel-item.previous {
+  visibility: visible;
+  z-index: 11;
+  transform: translateX(-100%);
+  cursor: pointer;
+}
+
+.carousel-item.next {
+  visibility: visible;
+  z-index: 10;
+  transform: translateX(100%);
+  cursor: pointer;
+}
+
+.carousel-item.move-left {
+  visibility: visible;
+  transform: translateX(-100%);
+}
+
+.carousel-item.move-right {
+  visibility: visible;
+  transform: translateX(100%);
+}
+
+.carousel-item.enter-right {
+  visibility: visible;
+  transform: translateX(0%);
+}
+.carousel-item.enter-left {
+  visibility: visible;
+  transform: translateX(0%);
+}
+
+/* Footer */
+
+footer {
+  background-color: rgb(245, 245, 247);
+  padding: 12px 0;
+  font-size: 12px;
+}
+
+.subscribe {
+  color: rgba(0, 0, 0, 0.56);
+}
+
+.retailer {
+  color: rgba(0, 0, 0, 0.56);
+}
+
+.line {
+  background-color: rgba(0, 0, 0, 0.16);
+  margin: 14px 0;
+}
+
+footer ul {
+  list-style: none;
+}
+
+.list-footer li {
+  font-family: "Helvetica Light";
+}
+
+.list-footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.list-footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.list-copyright {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 0.56);
+  margin-bottom: 11px;
+}
+
+.list-accordion {
+  display: none;
+}
+
+/* Responsive Tablet */
+@media screen and (max-width: 920px) {
+  .menu-mobile {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    right: 0;
+    padding-right: 16px;
+    gap: 12px;
+  }
+  .navbar-menu {
+    display: none;
+  }
+  .navbar-toggle {
+    background-color: transparent;
+    border: none;
+  }
+  .navbar-toggle svg {
+    height: 24px;
+    width: 24px;
+  }
+  .navbar-mobile {
+    position: fixed;
+    z-index: 40;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    background: #fff;
+    padding: 48px;
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 28px;
+  }
+  /* if .class not using spacing the relation is one element else the relation is two element */
+  .navbar-mobile.active {
+    display: flex;
+  }
+  .navbar-mobile .menu-item {
+    color: #000;
+    text-decoration: none;
+  }
+  .icon-mark {
+    height: 24px;
+    width: 24px;
+  }
+  .close-toggle {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background-color: transparent;
+    border: none;
+  }
+
+  /* Product */
+  .product {
+    height: 570px;
+  }
+  .product-content h1 {
+    font-size: 48px;
+  }
+  /* Slider */
+  .carousel {
+    height: 368px;
+  }
+  .carousel-content {
+    padding-left: 30px;
+    padding-bottom: 24px;
+  }
+  .carousel-content .btn {
+    font-size: 14px;
+  }
+  .carousel-content p {
+    font-size: 18px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 0 16px;
+  }
+  .list-footer {
+    display: none;
+  }
+
+  /* Accordion */
+  .list-accordion {
+    display: block;
+  }
+
+  .accordion {
+    border: none;
+    background-color: transparent;
+    border-top: 1px solid rgba(0, 0, 0, 0.16);
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    font-size: 12px;
+    position: relative;
+    transition: 0.4s;
+  }
+  .accordion:first-of-type {
+    border: none;
+  }
+  .accordion::after {
+    content: url('data:image/svg+xml;utf, <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"> <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" /> </svg> ');
+    color: #000;
+    position: absolute;
+    right: 20px;
+    top: 25%;
+    transform: translate(-50%);
+    height: 16px;
+    width: 16px;
+  }
+  .accordion.active::after {
+    content: url('data:image/svg+xml;utf,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"> <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /> </svg> ');
+  }
+  .panel {
+    padding: 0 14px;
+    background-color: transparent;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  .panel ul {
+    display: block;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 6px;
+  }
+  .panel ul li {
+    font-family: "Helvetica Light";
+  }
+  .retailer {
+    padding: 18px 0;
+  }
+  .list-copyright {
+    flex-direction: column;
+    gap: 12px;
+  }
+  #last-line {
+    display: none;
+  }
+  .list-copyright .country {
+    order: 1;
+  }
+  .list-copyright .copyright {
+    order: 2;
+    color: rgba(0, 0, 0, 0.18);
+  }
+  .list-copyright .law {
+    order: 3;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .product-content h1 {
+    font-size: 32px;
+  }
+}
