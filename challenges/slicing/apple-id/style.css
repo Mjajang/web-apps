@@ -205,6 +205,10 @@
   font-size: 21px;
 }
 
+#macbook-air .btn-secondary {
+  display: none;
+}
+
 .product {
   overflow: hidden;
   color: white;
@@ -681,8 +685,58 @@ footer ul {
   }
 }
 
+/* Mobile */
 @media screen and (max-width: 426px) {
+  /* General */
+  .btn {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+  /* Product */
+  #iphone-15-black {
+    background-image: url("./assets/Image/iphone-large-mobile.jpg");
+  }
+  #macbook-air {
+    background-image: url("./assets/Image/macbook_air-mobile.jpg");
+  }
+  .product {
+    height: 500px;
+  }
   .product-content h1 {
     font-size: 32px;
+  }
+  .product-content p {
+    font-size: 19px;
+    font-family: "Helvetica Light";
+    font-weight: 300;
+    padding: 0 48px;
+  }
+  .check {
+    display: none;
+  }
+  #macbook-air h5 {
+    font-size: 18px;
+  }
+  #macbook-air .btn-secondary {
+    display: block;
+  }
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* Carousel */
+  .carousel {
+    height: 548px;
+  }
+  .carousel-content {
+    flex-direction: column-reverse;
+    padding: 24px 8px;
+  }
+  .carousel-content p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
   }
 }
