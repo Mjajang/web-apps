@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  @keyframes spin-fast-reverse {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes bounce-random {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    20% {
+      transform: translate(10px, -20px) scale(1.1);
+    }
+    40% {
+      transform: translate(-15px, 15px) scale(0.9);
+    }
+    60% {
+      transform: translate(20px, -10px) scale(1.05);
+    }
+    80% {
+      transform: translate(-10px, 5px) scale(1);
+    }
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+  }
+
+  .animation-spin-fast-reverse {
+    animation: spin-fast-reverse 2s reverse linear infinite;
+  }
+
+  .animation-bounce-random {
+    display: inline-block;
+    animation: bounce-random 2s infinite ease-in-out;
+  }
+}

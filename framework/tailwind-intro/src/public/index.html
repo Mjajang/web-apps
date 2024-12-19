@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World Tailwind Intro</title>
+    <link href="../assets/tailwind.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1 class="font-bold text-[32px] text-amber-400 sm:text-purple-600 lg:text-red-600">
+      Hello World Tailwind Intro
+    </h1>
+    <button
+      class="px-4 py-2 font-semibold text-sm bg-blue-500 text-white rounded-md shadow-sm hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 transition-all animation-bounce-random"
+    >
+      Save Changes
+    </button>
+    <button
+      type="button"
+      class="px-4 py-2 rounded font-semibold text-white text-sm bg-red-600 hover:bg-red-400 hover:px-[100px] transition-spacing animation-spin-fast-reverse"
+    >
+      Cancel
+    </button>
+    <button
+      type="button"
+      class="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-white bg-indigo-500 hover:bg-indigo-400 transition ease-in-out duration-150 cursor-not-allowed"
+      disabled=""
+    >
+      <svg
+        class="animate-wiggle -ml-1 mr-3 h-5 w-5 text-white"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <circle
+          class="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          stroke-width="4"
+        ></circle>
+        <path
+          class="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+        ></path>
+      </svg>
+      Processing...
+    </button>
+    <p class="bg-primary-400 text-text-color-primary">Hello World second</p>
+  </body>
+</html>
