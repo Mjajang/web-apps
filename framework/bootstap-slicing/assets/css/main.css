@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+
+.bg-yellow {
+  background-color: #f4d04e;
+}
+.card {
+  border-radius: 20px;
+  padding: 24px;
+  max-width: 384px;
+  margin: 0 24px;
+}
+.badge {
+  border-radius: 4px;
+}
+.card-tag {
+  font-weight: 800;
+  margin-bottom: 0;
+  padding: 4px 12px;
+  font-size: 12px;
+}
+.card-date {
+  margin-bottom: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: black;
+}
+.card-title {
+  font-weight: 800;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+.card-body {
+  margin-top: 24px;
+  padding: 0;
+  gap: 12px;
+}
+.card-text {
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 500;
+  margin-bottom: 0;
+  color: #6b6b6b;
+}
+.card-author {
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
+/* Desktop */
+@media (min-width: 576px) {
+  .card-tag {
+    font-size: 16px;
+  }
+  .card-date {
+    font-size: 14px;
+  }
+  .card-title {
+    font-size: 24px;
+  }
+  .card-text {
+    font-size: 16px;
+  }
+  .card-title:hover {
+    color: #f4d04e;
+    cursor: pointer;
+  }
+}
