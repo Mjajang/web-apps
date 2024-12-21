@@ -1,0 +1,27 @@
+{
+  "name": "mui-intro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "",
+  "dependencies": {
+    "@mui/material": "^6.2.1",
+    "@mui/styled-engine-sc": "^6.2.1",
+    "babel-plugin-styled-components": "^2.1.4",
+    "react": "latest",
+    "react-dom": "latest",
+    "styled-components": "^6.1.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest"
+  }
+}
