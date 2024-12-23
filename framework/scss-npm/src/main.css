@@ -1,0 +1,23 @@
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.card .card-title {
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.home {
+  background-color: #f0f0f0;
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+button {
+  background-color: #007bff;
+}/*# sourceMappingURL=main.css.map */

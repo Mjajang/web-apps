@@ -1,0 +1,11 @@
+@import "styles/variable";
+@import "styles/components/card";
+@import "styles/pages/home";
+
+body {
+  background-color: #f0f0f0;
+}
+
+button {
+  background-color: $primary-color;
+}
