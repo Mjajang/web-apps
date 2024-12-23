@@ -1,0 +1,26 @@
+$primary-color: #a294f9;
+$secondary-color: #ff8000;
+$tertiary-color: #219b9d;
+
+.button {
+  padding: 4px 12px;
+  font-size: 14px;
+  background-color: $primary-color;
+  &--large {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: $primary-color;
+  }
+  &--small {
+    padding: 2px 8px;
+    font-size: 12px;
+    background-color: $primary-color;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  transform: matrix(30px);
+  backdrop-filter: blur(10px);
+}
