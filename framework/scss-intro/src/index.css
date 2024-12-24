@@ -1,3 +1,88 @@
+.grid {
+  display: grid;
+  gap: 20px;
+  transform: matrix(30px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+nav {
+  height: 80px;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  margin: 0 10px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.card--large, .card {
+  border: 1px solid #e0e0e0;
+  padding: 24px;
+}
+
+.gallery {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 16px;
+}
+
+/* Fonts */
+/* Margin */
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+}
+.card--large {
+  padding: 32px;
+  margin-top: 2rem;
+}
+.card .card-title {
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+.card .card-title-sm {
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+.card .card-text {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+.card .card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .button {
   padding: 4px 12px;
   font-size: 14px;
@@ -14,10 +99,16 @@
   background-color: #a294f9;
 }
 
-.grid {
-  display: grid;
-  gap: 20px;
-  transform: matrix(30px);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+.home {
+  background-color: #f0f0f0;
+}
+
+.p {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+.gallery > * {
+  align-self: center;
 }/*# sourceMappingURL=index.css.map */

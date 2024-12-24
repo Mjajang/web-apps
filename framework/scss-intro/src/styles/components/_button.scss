@@ -1,0 +1,15 @@
+.button {
+  padding: 4px 12px;
+  font-size: 14px;
+  background-color: $primary-color;
+  &--large {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: $primary-color;
+  }
+  &--small {
+    padding: 2px 8px;
+    font-size: 12px;
+    background-color: $primary-color;
+  }
+}

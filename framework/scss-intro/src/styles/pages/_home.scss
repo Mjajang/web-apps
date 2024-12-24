@@ -1,0 +1,23 @@
+.home {
+  background-color: #f0f0f0;
+}
+
+.p {
+  @include font-medium($size: 16px, $height: 1.5, $spacing: 0.5px);
+}
+
+.container {
+  @extend %container;
+}
+
+.container-fluid {
+  @extend %container-fluid;
+}
+
+.gallery {
+  @extend %grid-container;
+}
+
+.gallery > * {
+  align-self: center;
+}

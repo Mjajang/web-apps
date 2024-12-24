@@ -1,0 +1,32 @@
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  @extend %card-container;
+  margin-top: $mt-2;
+
+  &--large {
+    @extend %card-container;
+    padding: 32px;
+    margin-top: $mt-3;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    color: $text-color;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-title-sm {
+    @include font-medium(1rem, 1.5, 0.5px);
+  }
+
+  .card-text {
+    @include font-medium(16px, 1.5, 0.5px);
+  }
+
+  .card-footer {
+    @include flex-layout(row, space-between, center);
+  }
+}
