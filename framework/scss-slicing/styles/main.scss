@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+@import "./reset";
+@import "./variable";
+@import "./mixins/mixins";
+@import "./components/label";
+@import "./components/image";
+@import "./components/card";
+
+body {
+  font-family: "Figtree", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: $yellow;
+  @include flex-center;
+  height: 100vh;
+  padding: 0 24px;
+  @media screen and (min-width: 640px) {
+    padding: 0;
+  }
+}
