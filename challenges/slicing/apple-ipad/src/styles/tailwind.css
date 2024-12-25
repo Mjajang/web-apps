@@ -7,4 +7,23 @@
   body {
     @apply font-roboto font-normal text-base;
   }
+  .swiper {
+    @apply w-full h-[800px];
+  }
+  .swiper-wrapper {
+    @apply justify-center ml-[120px];
+  }
+  .swiper-slide {
+    @apply w-[405px] flex;
+  }
+  .btn-prev {
+    @apply h-9 w-9 rounded-full flex justify-center items-center bg-[#E9E9EB];
+  }
+  .btn-next {
+    @apply h-9 w-9 rounded-full flex justify-center items-center bg-[#E9E9EB];
+  }
+  .btn-next.swiper-button-disabled,
+  .btn-prev.swiper-button-disabled {
+    @apply opacity-40 cursor-not-allowed;
+  }
 }

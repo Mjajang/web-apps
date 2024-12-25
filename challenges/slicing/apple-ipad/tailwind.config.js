@@ -20,6 +20,9 @@ module.exports = {
         heading: ["80px", "84px"],
         subheading: ["28px", "32px"],
       },
+      backgroundImage: {
+        slider1: "url('/src/assets/produktif.jpg')",
+      },
     },
   },
   plugins: [],
