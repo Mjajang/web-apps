@@ -14,6 +14,13 @@ module.exports = {
         black: {
           apple: "#1d1d1f",
         },
+        blue: {
+          apple: "#0066CC",
+        },
+        space: {
+          "finish-space-black": "#2E2C2E",
+          "finish-silver": "#E3E4E5",
+        },
       },
       fontSize: {
         xxs: ["10px", "12px"],

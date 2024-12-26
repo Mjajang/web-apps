@@ -26,4 +26,10 @@
   .btn-prev.swiper-button-disabled {
     @apply opacity-40 cursor-not-allowed;
   }
+  .grid-list {
+    grid-template-rows: minmax(151px, max-content) minmax(86px, max-content) minmax(
+        111px,
+        max-content
+      );
+  }
 }
