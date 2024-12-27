@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
@@ -23,7 +24,45 @@
           ></path>
         </svg>
         <ul class="flex w-full justify-between items-center mx-[54px]">
-          <li class="text-xs text-black">Mac</li>
+          <div class="group">
+            <li class="text-xs text-black group-hover:cursor-pointer">Mac</li>
+            <div
+              class="absolute h-0 overflow-hidden group-hover:h-[514px] bg-background top-[44px] right-0 left-0 z-10 transition-all duration-500"
+            >
+              <div class="flex gap-[88px] max-w-[980px] mx-auto w-full pt-[40px] pb-16">
+                <div class="flex flex-col max-w-[342px] w-full mr-[88px]">
+                  <h3 class="mb-[14px] text-xs text-[#6e6e73]">Jelajahi iPad</h3>
+                  <ul
+                    class="flex flex-col gap-3 text-subheading font-medium text-black-apple mb-[30px]"
+                  >
+                    <li>Jelajahi Semua Model iPad</li>
+                    <li>iPad Pro</li>
+                    <li>iPad Air</li>
+                    <li>iPad</li>
+                    <li>iPad mini</li>
+                    <li>Apple Pencil</li>
+                    <li>Papan ketik</li>
+                  </ul>
+                  <ul class="flex flex-col gap-3 text-[14px] font-medium text-black-apple">
+                    <li>Bandingkan iPad</li>
+                    <li>Mengapa iPad</li>
+                  </ul>
+                </div>
+                <div class="flex flex-col w-full">
+                  <h3 class="mb-[14px] text-xs text-[#6e6e73]">Lainnya dari iPad</h3>
+                  <ul class="flex flex-col gap-3 text-[14px] font-medium text-black-apple">
+                    <li>Dukungan iPad</li>
+                    <li>Produk AppleCare</li>
+                    <li>iPadOS 18</li>
+                    <li>Apple Intelligence</li>
+                    <li>Aplikasi buatan Apple - Apple</li>
+                    <li>iCloud+</li>
+                    <li>Pendidikan</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
           <li class="text-xs text-black">iPad</li>
           <li class="text-xs text-black">iPhone</li>
           <li class="text-xs text-black">Watch</li>
@@ -39,7 +78,7 @@
           ></path>
         </svg>
       </nav>
-      <nav class="max-w-[980px] mx-auto w-full flex">
+      <nav class="max-w-[980px] mx-auto w-full flex" data-aos="fade-left">
         <div class="flex w-full py-6 justify-center gap-x-[44px]">
           <div class="flex flex-col items-center">
             <img src="./assets/ipad-air-double.svg" alt="iPad Pro" class="h-[56px] mb-1 w-full" />
@@ -85,13 +124,20 @@
     <main>
       <!-- Hero iPad -->
       <section id="iPad" class="w-full max-w-[1260px] mx-auto pt-[90px] pb-[150px]">
-        <div class="flex justify-between items-center mb-[80px]">
+        <div
+          class="flex justify-between items-center mb-[80px]"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <h1 class="text-heading text-black-apple font-semibold">iPad</h1>
           <p class="text-subheading text-black-apple font-semibold">
             Sentuh, gambar, dan ketik di satu perangkat istimewa.
           </p>
         </div>
         <iframe
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="500"
           class="w-full h-[680px] overflow-hidden rounded-[44px]"
           src="https://www.youtube.com/embed/UjmaxCyJBc4?si=SVLmYFKbHcO7NuSL"
           title="YouTube video player"
@@ -103,13 +149,13 @@
       </section>
       <!-- Kenali iPad -->
       <section id="kenali-iPad" class="w-full pb-[150px]">
-        <div class="flex justify-start max-w-[1260px] mx-auto mb-[80px]">
+        <div class="flex justify-start max-w-[1260px] mx-auto mb-[80px]" data-aos="fade-up">
           <h1 class="text-[56px] text-black-apple font-semibold">Kenali iPad lebih dalam.</h1>
         </div>
         <div class="swiper">
           <div class="swiper-wrapper">
             <!-- Slider 1 -->
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="350">
               <div
                 style="background-image: url('./assets/slider/produktif.jpg')"
                 class="h-[750px] rounded-[28px] bg-no-repeat bg-cover my-auto w-full p-[32px] hover:scale-105 transition-all"
@@ -139,7 +185,7 @@
               </div>
             </div>
             <!-- Slider 2 -->
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="400">
               <div
                 style="background-image: url('./assets/slider/kreativ.jpg')"
                 class="h-[750px] rounded-[28px] bg-no-repeat bg-cover my-auto w-full p-[32px] hover:scale-105 transition-all"
@@ -169,7 +215,7 @@
               </div>
             </div>
             <!-- Slider 3 -->
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="450">
               <div
                 style="background-image: url('./assets/slider/learning.jpg')"
                 class="h-[750px] rounded-[28px] bg-no-repeat bg-cover my-auto w-full p-[32px] hover:scale-105 transition-all"
@@ -199,7 +245,7 @@
               </div>
             </div>
             <!-- Slider 4 -->
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="500">
               <div
                 style="background-image: url('./assets/slider/entertain.jpg')"
                 class="h-[750px] rounded-[28px] bg-no-repeat bg-cover my-auto w-full p-[32px] hover:scale-105 transition-all"
@@ -229,7 +275,7 @@
               </div>
             </div>
             <!-- Slider 5 -->
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="550">
               <div
                 style="background-image: url('./assets/slider/pensil.jpg')"
                 class="h-[750px] rounded-[28px] bg-no-repeat bg-cover my-auto w-full p-[32px] hover:scale-105 transition-all"
@@ -259,7 +305,7 @@
               </div>
             </div>
             <!-- Slider 6 -->
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-aos="fade-up" data-aos-delay="600">
               <div
                 style="background-image: url('./assets/slider/ipados.jpg')"
                 class="h-[750px] rounded-[28px] bg-no-repeat bg-cover my-auto w-full p-[32px] hover:scale-105 transition-all"
@@ -309,7 +355,10 @@
       </section>
       <!-- Bandingkan iPad -->
       <section id="bandingkan-iPad" class="w-full py-[150px] bg-[#F5F5F7]">
-        <div class="max-w-[1260px] mx-auto flex justify-between items-center mb-[80px]">
+        <div
+          class="max-w-[1260px] mx-auto flex justify-between items-center mb-[80px]"
+          data-aos="fade-up"
+        >
           <h1 class="text-[56px] text-black-apple font-semibold">Jelajahi jajarannya.</h1>
           <a href="#" class="text-base text-blue-apple hover:underline">
             Bandingkan semua model >
@@ -317,7 +366,7 @@
         </div>
         <div class="grid grid-cols-4 max-w-[1260px] mx-auto">
           <!-- iPad Pro Bandingkan -->
-          <div class="flex flex-col">
+          <div class="flex flex-col" data-aos="fade-up" data-aos-delay="600">
             <div class="flex flex-col">
               <img
                 src="./assets/bandingkan/ipad-pro.png"
@@ -374,7 +423,7 @@
             </div>
           </div>
           <!-- iPad Air Bandingkan -->
-          <div class="flex flex-col">
+          <div class="flex flex-col" data-aos="fade-up" data-aos-delay="650">
             <div class="flex flex-col">
               <img
                 src="./assets/bandingkan/ipad-air.png"
@@ -432,7 +481,7 @@
             </div>
           </div>
           <!-- iPad -->
-          <div class="flex flex-col">
+          <div class="flex flex-col" data-aos="fade-up" data-aos-delay="700">
             <div class="flex flex-col">
               <img
                 src="./assets/bandingkan/ipad.png"
@@ -489,7 +538,7 @@
             </div>
           </div>
           <!-- iPad Mini -->
-          <div class="flex flex-col">
+          <div class="flex flex-col" data-aos="fade-up" data-aos-delay="750">
             <div class="flex flex-col">
               <img
                 src="./assets/bandingkan/ipad-mini.png"
@@ -549,12 +598,14 @@
       </section>
       <!-- Aksesoris -->
       <section id="aksesoris" class="w-full bg-[#F5F5F7] py-[10px]">
-        <div class="flex justify-start max-w-[1260px] mx-auto mb-[80px]">
+        <div class="flex justify-start max-w-[1260px] mx-auto mb-[80px]" data-aos="fade-up">
           <h1 class="text-[56px] text-black-apple font-semibold">Aksesori penting untuk iPad.</h1>
         </div>
         <div class="grid grid-cols-2 gap-5 py-[10px] max-w-[1260px] mx-auto">
           <div
             class="bg-white h-full max-h-[690px] flex flex-col justify-between rounded-[28px] pt-8 px-8"
+            data-aos="fade-up"
+            data-aos-delay="600"
           >
             <div class="flex flex-col items-center">
               <h6 class="mb-3 text-subheading font-medium">Apple Pencil</h6>
@@ -569,6 +620,8 @@
           </div>
           <div
             class="bg-white rounded-[28px] h-full max-h-[690px] flex flex-col justify-between pb-8 px-8"
+            data-aos="fade-up"
+            data-aos-delay="700"
           >
             <img
               src="./assets/aksesoris/keyboard.png"
@@ -587,11 +640,19 @@
           </div>
         </div>
       </section>
+      <!-- Pasangan -->
       <section id="pasangan" class="w-full py-[150px]">
-        <div class="max-w-[1260px] mx-auto flex justify-between items-center mb-[80px]">
+        <div
+          class="max-w-[1260px] mx-auto flex justify-between items-center mb-[80px]"
+          data-aos="fade-up"
+        >
           <h1 class="text-[56px] text-black-apple font-semibold">Pasangan sempurna.</h1>
         </div>
-        <div class="flex rounded-[28px] max-w-[1260px] w-full mx-auto bg-background">
+        <div
+          class="flex rounded-[28px] max-w-[1260px] w-full mx-auto bg-background"
+          data-aos="fade-up"
+          data-aos-delay="250"
+        >
           <div class="max-w-[590px] w-full mx-auto py-[120px] px-[90px]">
             <div class="accordion">
               <div
@@ -694,6 +755,7 @@
           </div>
         </div>
       </section>
+      <!-- List iPad -->
       <section id="list-ipad" class="w-full py-[150px] bg-background">
         <div class="max-w-[1260px] mx-auto flex justify-between items-center mb-[70px]">
           <h1 class="text-[48px] text-black-apple font-semibold">iPad</h1>
@@ -922,5 +984,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/app.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+      });
+    </script>
   </body>
 </html>
