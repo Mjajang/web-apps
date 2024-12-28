@@ -8,7 +8,7 @@ Apple iPad Landingpage using HTML, CSS, JS and Framework CSS Tailwind for Projec
 
 ## Screenshots
 
-![App Screenshot](./assets/screenshot.png)
+![App Screenshot](./src/assets/screenshot.png)
 
 ## Tech Stack
 
