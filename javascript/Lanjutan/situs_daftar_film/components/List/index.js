@@ -1,6 +1,7 @@
 class ListComponent {
-  constructor() {
-    this.listItems = ["List 1", "List 2", "List 3"];
+  constructor(props) {
+    const { items } = props;
+    this.listItems = items;
   }
 
   render() {
