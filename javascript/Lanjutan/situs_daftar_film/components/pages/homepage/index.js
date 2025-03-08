@@ -2,12 +2,22 @@ import Button from "../../UI/Button/index.js";
 import Typography from "../../UI/Typography/index.js";
 
 class Homepage {
-  constructor(props) {}
+  constructor() {
+    this.state = {
+      count: 0,
+    };
+    this.homeContainer = document.createElement("div");
+  }
+
+  setState(newState) {
+    this.state = { ...this.state, ...newState };
+    this.render();
+  }
 
   render() {
-    const homeContainer = document.createElement("div");
+    this.homeContainer.innerHTML = "";
     const title = new Typography({ variant: "h1", children: "HomePage" });
-    homeContainer.appendChild(title.render());
+    this.homeContainer.appendChild(title.render());
     const homeButtonNavigate = new Button({
       text: "Go to Detail Page",
       variant: "primary",
@@ -15,8 +25,33 @@ class Homepage {
         window.location.hash = "detail";
       },
     });
-    homeContainer.appendChild(homeButtonNavigate.render());
-    return homeContainer;
+    this.homeContainer.appendChild(homeButtonNavigate.render());
+    this.homeContainer.appendChild(
+      new Typography({
+        variant: "p",
+        children: "Count: " + this.state.count,
+      }).render()
+    );
+    this.homeContainer.appendChild(
+      new Button({
+        text: "-",
+        variant: "secondary",
+        onclick: () => {
+          this.setState({ count: this.state.count - 1 });
+        },
+      }).render()
+    );
+    this.homeContainer.appendChild(
+      new Button({
+        text: "+",
+        variant: "secondary",
+        onclick: () => {
+          this.setState({ count: this.state.count + 1 });
+        },
+      }).render()
+    );
+
+    return this.homeContainer;
   }
 }
 
