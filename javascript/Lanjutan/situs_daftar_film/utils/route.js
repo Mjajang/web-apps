@@ -9,15 +9,12 @@ const ROUTES = {
 export const route = (hash) => {
   const appContainer = document.getElementById("app");
   appContainer.innerHTML = "";
+  const hashRoute = hash === "" ? "home" : hash;
+  const isAvailable = ROUTES.hasOwnProperty(hashRoute);
 
-  if (hash === "") {
-    // berada di halaman home
-    appContainer.appendChild(ROUTES["home"]);
-  } else if (hash === "detail") {
-    // berada di halaman detail
-    appContainer.appendChild(ROUTES["detail"]);
+  if (isAvailable) {
+    appContainer.appendChild(ROUTES[hashRoute]);
   } else {
-    // halaman tidak ditemukan
     console.log("Not Found Page");
   }
 };
