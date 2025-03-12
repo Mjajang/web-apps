@@ -4,4 +4,32 @@
 body {
   color: var(--primary-color);
   font-family: var(--primary-font);
+  background-color: var(--primary-bg);
+}
+
+.btn {
+  width: 100px;
+  height: 40px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--primary-bg);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}
+
+.form-select {
+  width: auto;
+  height: 40px;
+  border: none;
+  background-color: var(--primary-bg);
+  color: var(--secondary-color);
+}
+
+.filter-container {
+  display: flex;
+  gap: 10px;
 }

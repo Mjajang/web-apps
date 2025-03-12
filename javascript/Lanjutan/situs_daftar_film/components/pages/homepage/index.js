@@ -1,4 +1,5 @@
 import { fetchApi } from "../../../utils/fetchApi.js";
+import FilterMovie from "../../container/FilterMovie/index.js";
 import Button from "../../UI/Button/index.js";
 import Typography from "../../UI/Typography/index.js";
 
@@ -6,6 +7,7 @@ class Homepage {
   constructor() {
     this.state = {
       count: 0,
+      isLoading: false,
     };
     this.homeContainer = document.createElement("div");
   }
@@ -16,49 +18,20 @@ class Homepage {
   }
 
   getDataMovies() {
+    this.setState({ isLoading: true });
     fetchApi("GET", "titles/x/upcoming").then((result) => {
       console.log(result);
+      this.setState({ isLoading: false });
     });
   }
 
   render() {
     this.homeContainer.innerHTML = "";
-    this.getDataMovies();
     const title = new Typography({ variant: "h1", children: "HomePage" });
     this.homeContainer.appendChild(title.render());
-    const homeButtonNavigate = new Button({
-      text: "Go to Detail Page",
-      variant: "primary",
-      onclick: () => {
-        window.location.hash = "detail";
-      },
-    });
-    this.homeContainer.appendChild(homeButtonNavigate.render());
     this.homeContainer.appendChild(
-      new Typography({
-        variant: "p",
-        children: "Count: " + this.state.count,
-      }).render()
+      new FilterMovie({ submitFilter: () => this.getDataMovies() }).render()
     );
-    this.homeContainer.appendChild(
-      new Button({
-        text: "-",
-        variant: "secondary",
-        onclick: () => {
-          this.setState({ count: this.state.count - 1 });
-        },
-      }).render()
-    );
-    this.homeContainer.appendChild(
-      new Button({
-        text: "+",
-        variant: "secondary",
-        onclick: () => {
-          this.setState({ count: this.state.count + 1 });
-        },
-      }).render()
-    );
-
     return this.homeContainer;
   }
 }
