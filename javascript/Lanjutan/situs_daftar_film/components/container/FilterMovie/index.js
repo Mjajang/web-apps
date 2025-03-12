@@ -3,9 +3,13 @@ import Select from "../../UI/Select/index.js";
 
 class FilterMovie {
   constructor(props) {
-    const { submitFilter, isLoading } = props;
+    const { submitFilter, isLoading, type, year, setType, setYear } = props;
     this.submitFilter = submitFilter;
     this.isLoading = isLoading;
+    this.type = type;
+    this.year = year;
+    this.setType = setType;
+    this.setYear = setYear;
     this.filterContainer = document.createElement("div");
   }
 
@@ -20,12 +24,13 @@ class FilterMovie {
     this.filterContainer.appendChild(
       new Select({
         options: [
+          { value: "", text: "Select Type" },
           { value: "movie", text: "Movie" },
           { value: "short", text: "Short" },
         ],
-        selectedValue: "movie",
+        selectedValue: this.type,
         onChange: (value) => {
-          console.log(value);
+          this.setType(value);
         },
         width: "100px",
       }).render()
@@ -33,6 +38,7 @@ class FilterMovie {
     this.filterContainer.appendChild(
       new Select({
         options: [
+          { value: "", text: "Select Year" },
           { value: "2024", text: "2024" },
           { value: "2023", text: "2023" },
           { value: "2022", text: "2022" },
@@ -40,9 +46,9 @@ class FilterMovie {
           { value: "2020", text: "2020" },
           { value: "2019", text: "2019" },
         ],
-        selectedValue: "2024",
+        selectedValue: this.year,
         onChange: (value) => {
-          console.log(value);
+          this.setYear(value);
         },
         width: "200px",
       }).render()

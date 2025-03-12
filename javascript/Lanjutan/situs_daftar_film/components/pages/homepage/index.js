@@ -8,6 +8,8 @@ class Homepage {
     this.state = {
       count: 0,
       isLoading: false,
+      filterType: "",
+      filterYear: "",
     };
     this.homeContainer = document.createElement("div");
   }
@@ -19,7 +21,17 @@ class Homepage {
 
   getDataMovies() {
     this.setState({ isLoading: true });
-    fetchApi("GET", "titles/x/upcoming").then((result) => {
+    let urlPath = "titles/x/upcoming";
+    // add params
+    if (this.state.filterType !== "") {
+      urlPath += `?titleType=${this.state.filterType}`;
+      if (this.state.filterYear !== "") {
+        urlPath += `&year=${this.state.filterYear}`;
+      }
+    } else if (this.state.filterYear !== "") {
+      urlPath += `?year=${this.state.filterYear}`;
+    }
+    fetchApi("GET", urlPath).then((result) => {
       console.log(result);
       this.setState({ isLoading: false });
     });
@@ -30,7 +42,14 @@ class Homepage {
     const title = new Typography({ variant: "h1", children: "HomePage" });
     this.homeContainer.appendChild(title.render());
     this.homeContainer.appendChild(
-      new FilterMovie({ submitFilter: () => this.getDataMovies() }).render()
+      new FilterMovie({
+        submitFilter: () => this.getDataMovies(),
+        setType: (value) => this.setState({ filterType: value }),
+        setYear: (value) => this.setState({ filterYear: value }),
+        type: this.state.filterType,
+        year: this.state.filterYear,
+        isLoading: this.state.isLoading,
+      }).render()
     );
     return this.homeContainer;
   }
