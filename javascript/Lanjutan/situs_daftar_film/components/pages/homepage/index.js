@@ -1,5 +1,6 @@
 import { fetchApi } from "../../../utils/fetchApi.js";
 import FilterMovie from "../../container/FilterMovie/index.js";
+import MovieList from "../../container/MovieList/index.js";
 import Button from "../../UI/Button/index.js";
 import Typography from "../../UI/Typography/index.js";
 
@@ -10,8 +11,15 @@ class Homepage {
       isLoading: false,
       filterType: "",
       filterYear: "",
+      movieList: [],
     };
     this.homeContainer = document.createElement("div");
+    this.init();
+  }
+
+  init() {
+    this.getDataMovies();
+    this.render();
   }
 
   setState(newState) {
@@ -32,7 +40,8 @@ class Homepage {
       urlPath += `?year=${this.state.filterYear}`;
     }
     fetchApi("GET", urlPath).then((result) => {
-      console.log(result);
+      // console.log(result);
+      this.setState({ movieList: result.results });
       this.setState({ isLoading: false });
     });
   }
@@ -51,6 +60,7 @@ class Homepage {
         isLoading: this.state.isLoading,
       }).render()
     );
+    this.homeContainer.appendChild(new MovieList({ movieItems: this.state.movieList }).render());
     return this.homeContainer;
   }
 }
