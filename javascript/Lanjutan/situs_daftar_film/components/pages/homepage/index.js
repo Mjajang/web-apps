@@ -12,6 +12,7 @@ class Homepage {
       filterType: "",
       filterYear: "",
       movieList: [],
+      page: 1,
     };
     this.homeContainer = document.createElement("div");
     this.init();
@@ -28,9 +29,10 @@ class Homepage {
     this.render();
   }
 
-  getDataMovies() {
+  getDataMovies(pageParam = 1, type = "get") {
     this.setState({ isLoading: true });
-    let urlPath = "titles/x/upcoming?limit=4";
+    const page = type === "get" ? 1 : pageParam;
+    let urlPath = `titles/x/upcoming?limit=4&page=${page}`;
     // add params
     if (this.state.filterType !== "") {
       urlPath += `&titleType=${this.state.filterType}`;
@@ -39,15 +41,31 @@ class Homepage {
     }
     fetchApi("GET", urlPath).then((result) => {
       // console.log(result);
-      this.setState({ movieList: result.results });
+      if (type === "get") {
+        this.setState({ movieList: result.results });
+      } else {
+        this.setState({ movieList: [...this.state.movieList, ...result.results] });
+      }
       this.setState({ isLoading: false });
     });
   }
 
+  loadMoreMovie() {
+    this.setState({ isLoading: true });
+    this.setState({ page: this.state.page + 1 });
+    this.getDataMovies(this.state.page + 1, "load");
+  }
+
   render() {
     this.homeContainer.innerHTML = "";
-    const title = new Typography({ variant: "h1", children: "HomePage" });
+    const title = new Typography({ variant: "h1", children: "Movie Web" });
+    const subTitle = new Typography({
+      variant: "h2",
+      children: "Using Vanilla",
+      className: "caption2",
+    });
     this.homeContainer.appendChild(title.render());
+    this.homeContainer.appendChild(subTitle.render());
     this.homeContainer.appendChild(
       new FilterMovie({
         submitFilter: () => this.getDataMovies(),
@@ -60,7 +78,12 @@ class Homepage {
     );
     const titleUpcoming = new Typography({ variant: "h1", children: "Upcoming Movie" });
     this.homeContainer.appendChild(titleUpcoming.render());
-    this.homeContainer.appendChild(new MovieList({ movieItems: this.state.movieList }).render());
+    this.homeContainer.appendChild(
+      new MovieList({
+        movieItems: this.state.movieList,
+        loadMoreMovie: () => this.loadMoreMovie(),
+      }).render()
+    );
     return this.homeContainer;
   }
 }
