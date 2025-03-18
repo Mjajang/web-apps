@@ -20,15 +20,17 @@ class MovieList {
       this.movieContainer.appendChild(movieItem.render());
     });
     this.movieWrapper.appendChild(this.movieContainer);
-    this.movieWrapper.appendChild(
-      new Button({
-        text: this.isLoading ? new Loader().render() : "Load More",
-        variant: "primary",
-        className: "load-more",
-        onclick: () => this.loadMoreMovie(),
-        disabled: this.isLoading,
-      }).render()
-    );
+    if (this.movieItems.length > 0) {
+      this.movieWrapper.appendChild(
+        new Button({
+          text: this.isLoading ? new Loader().render() : "Load More",
+          variant: "primary",
+          className: "load-more",
+          onclick: () => this.loadMoreMovie(),
+          disabled: this.isLoading,
+        }).render()
+      );
+    }
     return this.movieWrapper;
   }
 }
