@@ -21,11 +21,14 @@ class MovieItem {
       }).render()
     );
     this.movieContainer.appendChild(divImage);
+    const divInfo = document.createElement("div");
+    divInfo.className = "info-container";
+    this.movieContainer.appendChild(divInfo);
 
-    this.movieContainer.appendChild(
+    divInfo.appendChild(
       new Typography({ variant: "h4", children: this.movie.titleText.text }).render()
     );
-    this.movieContainer.appendChild(
+    divInfo.appendChild(
       new Typography({ variant: "h5", children: this.movie.releaseYear.year }).render()
     );
     return this.movieContainer;

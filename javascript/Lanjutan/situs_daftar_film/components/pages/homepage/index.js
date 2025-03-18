@@ -82,6 +82,7 @@ class Homepage {
       new MovieList({
         movieItems: this.state.movieList,
         loadMoreMovie: () => this.loadMoreMovie(),
+        isLoading: this.state.isLoading,
       }).render()
     );
     return this.homeContainer;

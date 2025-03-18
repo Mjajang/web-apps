@@ -19,7 +19,11 @@ class Button {
 
   render() {
     const button = document.createElement("button");
-    button.innerText = this.text;
+    if (typeof this.text === "string") {
+      button.innerHTML = this.text;
+    } else if (this.text instanceof HTMLElement) {
+      button.appendChild(this.text);
+    }
     button.className = `btn btn-${this.variant} ${this.className}`;
     button.disabled = this.disabled;
     button.addEventListener("click", this.handleClick.bind(this));
