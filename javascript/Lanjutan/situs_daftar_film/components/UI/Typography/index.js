@@ -1,9 +1,10 @@
 class Typography {
   constructor(props) {
-    const { variant, children, className } = props;
+    const { variant, children, className, onclick } = props;
     this.variant = variant;
     this.children = children;
     this.className = className;
+    this.onclick = onclick;
   }
 
   VARIANTS = {
@@ -16,8 +17,17 @@ class Typography {
     p: "p",
   };
 
+  handleClick() {
+    if (this.onclick) {
+      this.onclick();
+    } else {
+      return;
+    }
+  }
+
   render() {
     const typographyContainer = document.createElement(this.VARIANTS[this.variant]);
+    typographyContainer.onclick = this.handleClick.bind(this);
     typographyContainer.className = this.className;
     typographyContainer.innerHTML = this.children;
     return typographyContainer;
