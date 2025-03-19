@@ -3,6 +3,7 @@ import Button from "../../UI/Button/index.js";
 import Typography from "../../UI/Typography/index.js";
 import ImageComponent from "../../UI/Image/index.js";
 import Skeleton from "../../UI/Skeleton/index.js";
+import Navigation from "../../container/Navigation/index.js";
 
 class Detailpage {
   constructor(props) {
@@ -43,16 +44,8 @@ class Detailpage {
 
   render() {
     this.detailContainer.innerHTML = "";
-    const title = new Typography({ variant: "h1", children: "Detail Page" });
-    this.detailContainer.appendChild(title.render());
-    const homeButtonNavigate = new Button({
-      text: "Go to Home Page",
-      variant: "primary",
-      onclick: () => {
-        window.location.hash = "";
-      },
-    });
-    this.detailContainer.appendChild(homeButtonNavigate.render());
+    const navigation = new Navigation();
+    this.detailContainer.appendChild(navigation.render());
     if (
       Object.keys(this.state.selectedItem).length > 0 &&
       Object.keys(this.state.movieRate).length > 0
