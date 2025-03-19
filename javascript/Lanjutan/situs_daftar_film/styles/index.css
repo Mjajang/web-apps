@@ -158,8 +158,14 @@ body {
 
 .navigation-container {
   display: flex;
-  gap: 40px;
+  justify-content: space-between;
   align-items: center;
+}
+
+.nav-container-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 
 .navigation-container > h5 {
@@ -181,6 +187,51 @@ body {
 
 .content-detail h2 {
   color: white;
+}
+
+.switch-toggle {
+  display: none;
+}
+
+.switch-label {
+  display: block;
+  width: 60px;
+  height: 34px;
+  background-color: var(--primary-color);
+  border-radius: 34px;
+  position: relative;
+  cursor: pointer;
+}
+
+.switch-label::before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: 0.3s;
+}
+
+.switch-toggle:checked + .switch-label {
+  background: var(--secondary-color);
+}
+
+.switch-toggle:checked + .switch-label::before {
+  transform: translateX(26px);
+}
+
+.body-container {
+  color: var(--primary-color);
+  background-color: var(--primary-bg);
+}
+
+.body-container-light {
+  color: var(--primary-color);
+  background-color: var(--white-color);
 }
 
 @media screen and (max-width: 768px) {

@@ -17,6 +17,7 @@ class Homepage {
       movie: [],
       page: 1,
       moviePage: 1,
+      isLightMode: false,
     };
     this.homeContainer = document.createElement("div");
     this.init();
@@ -89,7 +90,15 @@ class Homepage {
 
   render() {
     this.homeContainer.innerHTML = "";
-    const navigation = new Navigation({});
+    if (this.state.isLightMode) {
+      document.body.className = "body-container-light";
+    } else {
+      document.body.className = "body-container";
+    }
+    const navigation = new Navigation({
+      setLightMode: (value) => this.setState({ isLightMode: value }),
+      isLightMode: this.state.isLightMode,
+    });
     const title = new Typography({ variant: "h1", children: "Movie Web" });
     const subTitle = new Typography({
       variant: "h2",

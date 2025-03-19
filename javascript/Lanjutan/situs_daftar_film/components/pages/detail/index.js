@@ -12,6 +12,7 @@ class Detailpage {
       selectedItem: {},
       movieRate: {},
       isLoading: true,
+      isLightMode: false,
     };
     this.detailContainer = document.createElement("div");
     this.init();
@@ -45,7 +46,10 @@ class Detailpage {
 
   render() {
     this.detailContainer.innerHTML = "";
-    const navigation = new Navigation();
+    const navigation = new Navigation({
+      setLightMode: (value) => this.setState({ isLightMode: value }),
+      isLightMode: this.state.isLightMode,
+    });
     this.detailContainer.appendChild(navigation.render());
     if (
       Object.keys(this.state.selectedItem).length > 0 &&
