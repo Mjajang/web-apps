@@ -12,7 +12,9 @@ class Homepage {
       filterType: "",
       filterYear: "",
       movieList: [],
+      movie: [],
       page: 1,
+      moviePage: 1,
     };
     this.homeContainer = document.createElement("div");
     this.init();
@@ -34,7 +36,7 @@ class Homepage {
   getDataMovies(pageParam = 1, type = "get") {
     this.setState({ isLoading: true });
     const page = type === "get" ? 1 : pageParam;
-    let urlPath = `titles/x/upcoming?limit=4&page=${page}`;
+    let urlPath = `titles/x/upcoming?limit=4&page=${page}&sort=year.decr`;
     // add params
     if (this.state.filterType !== "") {
       urlPath += `&titleType=${this.state.filterType}`;
@@ -48,14 +50,39 @@ class Homepage {
       } else {
         this.setState({ movieList: [...this.state.movieList, ...result.results] });
       }
-      this.setState({ isLoading: false });
     });
+
+    const pageMovie = type === "get" ? 1 : pageParam;
+    let year = "2024";
+    let urlPathMovie = `titles?limit=4&page=${pageMovie}&sort=year.decr&year=${year}`;
+    if (this.state.filterYear !== "") {
+      urlPath += `&titleType=${this.state.filterType}`;
+    } else if (this.state.filterYear !== "") {
+      year += this.state.filterYear;
+    }
+    fetchApi("GET", urlPathMovie).then((result) => {
+      // console.log(result);
+      if (type === "get") {
+        this.setState({ movie: result.results });
+      } else {
+        this.setState({ movie: [...this.state.movie, ...result.results] });
+      }
+    });
+
+    this.setState({ isLoading: false });
   }
 
-  loadMoreMovie() {
+  loadMoreMovie(params) {
     this.setState({ isLoading: true });
-    this.setState({ page: this.state.page + 1 });
-    this.getDataMovies(this.state.page + 1, "load");
+    if (params === "upcoming") {
+      const nextPage = this.state.page + 1;
+      this.setState({ page: nextPage });
+      this.getUpcomingMovies(nextPage, "load");
+    } else {
+      const nextMoviePage = this.state.moviePage + 1;
+      this.setState({ moviePage: nextMoviePage });
+      this.getYearMovies(nextMoviePage, "load");
+    }
   }
 
   render() {
@@ -83,7 +110,16 @@ class Homepage {
     this.homeContainer.appendChild(
       new MovieList({
         movieItems: this.state.movieList,
-        loadMoreMovie: () => this.loadMoreMovie(),
+        loadMoreMovie: () => this.loadMoreMovie("upcoming"),
+        isLoading: this.state.isLoading,
+      }).render()
+    );
+    const titleThisYear = new Typography({ variant: "h1", children: "Movie of The Year" });
+    this.homeContainer.appendChild(titleThisYear.render());
+    this.homeContainer.appendChild(
+      new MovieList({
+        movieItems: this.state.movie,
+        loadMoreMovie: () => this.loadMoreMovie("movie"),
         isLoading: this.state.isLoading,
       }).render()
     );
