@@ -166,3 +166,7 @@ body {
   cursor: pointer;
   user-select: none;
 }
+
+.footer {
+  text-align: center;
+}

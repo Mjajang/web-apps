@@ -4,6 +4,7 @@ import Typography from "../../UI/Typography/index.js";
 import ImageComponent from "../../UI/Image/index.js";
 import Skeleton from "../../UI/Skeleton/index.js";
 import Navigation from "../../container/Navigation/index.js";
+import Footer from "../../container/Footer/index.js";
 
 class Detailpage {
   constructor(props) {
@@ -130,6 +131,8 @@ class Detailpage {
       contentContainer.appendChild(contentDetail);
       this.detailContainer.appendChild(contentContainer);
     }
+
+    this.detailContainer.appendChild(new Footer().render());
     return this.detailContainer;
   }
 }
