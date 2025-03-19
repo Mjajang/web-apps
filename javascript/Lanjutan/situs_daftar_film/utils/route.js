@@ -1,11 +1,12 @@
 import Homepage from "../components/pages/homepage/index.js";
 import Detailpage from "../components/pages/detail/index.js";
 import AboutPage from "../components/pages/about/index.js";
+import NotFound from "../components/pages/404/index.js";
 const ROUTES = {
   home: new Homepage().render(),
   detail: new Detailpage().render(),
   about: new AboutPage().render(),
-  not_found: new Homepage().render(),
+  _404: new NotFound().render(),
 };
 
 export const route = (hash) => {
@@ -17,6 +18,6 @@ export const route = (hash) => {
   if (isAvailable) {
     appContainer.appendChild(ROUTES[hashRoute]);
   } else {
-    console.log("Not Found Page");
+    appContainer.appendChild(ROUTES["_404"]);
   }
 };
