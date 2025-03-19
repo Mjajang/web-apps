@@ -19,8 +19,8 @@ class Homepage {
       moviePage: 1,
       isLightMode: false,
     };
-    this.init();
     this.homeContainer = document.createElement("div");
+    this.init();
     window.addEventListener("hashchange", () => {
       if (window.location.hash.split("?")[0] === "") {
         this.init();

@@ -14,8 +14,8 @@ class Detailpage {
       isLoading: true,
       isLightMode: false,
     };
-    this.init();
     this.detailContainer = document.createElement("div");
+    this.init();
     window.addEventListener("hashchange", () => {
       if (window.location.hash.split("?")[0] === "#detail") {
         this.init();
