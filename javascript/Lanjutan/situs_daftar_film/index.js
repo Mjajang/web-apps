@@ -8,7 +8,9 @@ const handleHash = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  window.history.replaceState(null, null, "#"); // default route
+  if (window.location.hash === "") {
+    window.history.replaceState(null, null, "#"); // default route
+  }
   handleHash();
 });
 

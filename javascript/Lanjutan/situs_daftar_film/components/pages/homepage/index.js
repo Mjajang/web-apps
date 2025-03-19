@@ -19,9 +19,11 @@ class Homepage {
   }
 
   init() {
-    // for initial get data
-    // this.getDataMovies();
-    this.render();
+    if (window.location.hash === "") {
+      // for initial get data
+      // this.getDataMovies();
+      this.render();
+    }
   }
 
   setState(newState) {
