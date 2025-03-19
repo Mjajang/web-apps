@@ -14,8 +14,13 @@ class Detailpage {
       isLoading: true,
       isLightMode: false,
     };
-    this.detailContainer = document.createElement("div");
     this.init();
+    this.detailContainer = document.createElement("div");
+    window.addEventListener("hashchange", () => {
+      if (window.location.hash.split("?")[0] === "#detail") {
+        this.init();
+      }
+    });
   }
 
   init() {

@@ -19,14 +19,19 @@ class Homepage {
       moviePage: 1,
       isLightMode: false,
     };
-    this.homeContainer = document.createElement("div");
     this.init();
+    this.homeContainer = document.createElement("div");
+    window.addEventListener("hashchange", () => {
+      if (window.location.hash.split("?")[0] === "") {
+        this.init();
+      }
+    });
   }
 
   init() {
     if (window.location.hash === "") {
       // for initial get data
-      // this.getDataMovies();
+      this.getDataMovies();
       this.render();
     }
   }
