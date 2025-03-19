@@ -2,6 +2,7 @@ import { fetchApi } from "../../../utils/fetchApi.js";
 import Button from "../../UI/Button/index.js";
 import Typography from "../../UI/Typography/index.js";
 import ImageComponent from "../../UI/Image/index.js";
+import Skeleton from "../../UI/Skeleton/index.js";
 
 class Detailpage {
   constructor(props) {
@@ -97,6 +98,39 @@ class Detailpage {
         new Typography({
           variant: "h2",
           children: `Voters Count: ${this.state.movieRate.numVotes}`,
+        }).render()
+      );
+
+      contentContainer.appendChild(contentDetail);
+      this.detailContainer.appendChild(contentContainer);
+    } else {
+      this.detailContainer.appendChild(
+        new Skeleton({
+          width: "100%",
+          height: "600px",
+        }).render()
+      );
+
+      const contentContainer = document.createElement("div");
+      contentContainer.className = "content-container";
+      contentContainer.appendChild(
+        new Skeleton({
+          width: "300px",
+          height: "300px",
+        }).render()
+      );
+
+      const contentDetail = document.createElement("div");
+      contentDetail.appendChild(
+        new Skeleton({
+          width: "300px",
+          height: "60px",
+        }).render()
+      );
+      contentDetail.appendChild(
+        new Skeleton({
+          width: "300px",
+          height: "60px",
         }).render()
       );
 
