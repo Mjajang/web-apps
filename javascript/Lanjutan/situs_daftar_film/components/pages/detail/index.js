@@ -70,6 +70,7 @@ class Detailpage {
       );
 
       const contentDetail = document.createElement("div");
+      contentDetail.className = "content-detail";
       contentDetail.appendChild(
         new Typography({
           variant: "h1",
@@ -115,6 +116,7 @@ class Detailpage {
       );
 
       const contentDetail = document.createElement("div");
+      contentDetail.className = "content-detail";
       contentDetail.appendChild(
         new Skeleton({
           width: "300px",
