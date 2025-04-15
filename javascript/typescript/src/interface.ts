@@ -70,3 +70,57 @@ interface StringArray {
 }
 const stringArray: StringArray = ["Jajang", "Azzario", "Mahrul"];
 console.log("stringArray: ", stringArray); // ["Jajang", "Azzario", "Mahrul"]
+
+// Extends interface
+interface Student extends Person {
+  nim: string;
+}
+
+let students: Student[] = [
+  {
+    nim: "123456789",
+    name: "Jajang",
+    age: 20,
+    email: "jajang.mahrul.work@gmail.com",
+    greet(message: string) {
+      console.log(message + this.name);
+    },
+  },
+  {
+    nim: "987654321",
+    name: "Azzario",
+    age: 22,
+    email: "azzariorazy@gmail.com",
+    greet(message: string) {
+      console.log(message + this.name);
+    },
+  },
+];
+
+interface Employee extends Person {
+  nip: string;
+  position: string;
+}
+
+let employees: Employee[] = [
+  {
+    nip: "123456789",
+    position: "Manager",
+    name: "Jajang",
+    age: 20,
+    email: "jajang.mahrul.work@gmail.com",
+    greet(message: string) {
+      console.log(message + this.name);
+    },
+  },
+  {
+    nip: "987654321",
+    position: "Staff",
+    name: "Azzario",
+    age: 20,
+    email: "azzario.work@gmail.com",
+    greet(message: string) {
+      console.log(message + this.name);
+    },
+  },
+];
