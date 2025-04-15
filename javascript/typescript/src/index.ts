@@ -41,3 +41,41 @@ const handleCalculate = (a: number, b: number): void => {
   console.log("handleCalculate: ", a + b); // 3
 };
 handleCalculate(1, 2);
+
+// any
+let data: any = 1;
+console.log("data: ", data); // 1
+data = "Jajang";
+console.log("data: ", data); // Jajang
+
+// enum
+enum Speed {
+  SLOW = 1,
+  MEDIUM,
+  FAST,
+}
+console.log(Speed.SLOW, Speed.MEDIUM, Speed.FAST);
+
+// tuple
+type PersonType = [string, number, boolean];
+let person: PersonType = ["Jajang", 20, true];
+console.log("person: ", person);
+let user: [string, number, boolean] = ["Jajang", 20, true];
+console.log("user: ", user);
+
+// unknown
+let unknownData: unknown = 1;
+console.log("unknownData: ", unknownData); // 1
+unknownData = "Jajang";
+console.log("unknownData: ", unknownData); // Jajang
+
+// union
+let unionData: string | number = 1;
+console.log("unionData: ", unionData); // 1
+unionData = "Jajang";
+console.log("unionData: ", unionData); // Jajang
+// unionData = true; // it will be error
+let nickname: "jm" | "jajang" = "jm";
+console.log("nickname: ", nickname); // jm
+// nickname = "azzario";
+// console.log("nickname: ", nickname); // azzario
