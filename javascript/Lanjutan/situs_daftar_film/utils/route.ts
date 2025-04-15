@@ -1,16 +1,16 @@
-import Homepage from "../components/pages/homepage/index.js";
-import Detailpage from "../components/pages/detail/index.js";
-import AboutPage from "../components/pages/about/index.js";
-import NotFound from "../components/pages/404/index.js";
-const ROUTES = {
+import Homepage from "../components/pages/homepage/index.ts";
+import Detailpage from "../components/pages/detail/index.ts";
+import AboutPage from "../components/pages/about/index.ts";
+import NotFound from "../components/pages/404/index.ts";
+const ROUTES: { [key: string]: HTMLElement } = {
   home: new Homepage().render(),
   detail: new Detailpage().render(),
   about: new AboutPage().render(),
   _404: new NotFound().render(),
 };
 
-export const route = (hash) => {
-  const appContainer = document.getElementById("app");
+export const route = (hash: string) => {
+  const appContainer = document.getElementById("app") as HTMLElement;
   appContainer.innerHTML = "";
   const hashRoute = hash === "" ? "home" : hash.split("?")[0];
   const isAvailable = ROUTES.hasOwnProperty(hashRoute);

@@ -1,7 +1,7 @@
-import Button from "../../UI/Button/index.js";
-import Loader from "../../UI/Loader/index.js";
-import Typography from "../../UI/Typography/index.js";
-import MovieItem from "../MovieItem/index.js";
+import Button from "../../UI/Button/index.ts";
+import Loader from "../../UI/Loader/index.ts";
+import Typography from "../../UI/Typography/index.ts";
+import MovieItem from "../MovieItem/index.ts";
 
 class MovieList {
   constructor(props) {

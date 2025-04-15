@@ -1,5 +1,12 @@
+import TypographyProps from "./typography.types";
+
 class Typography {
-  constructor(props) {
+  variant: string;
+  children: string;
+  className: string;
+  onclick?: () => void;
+
+  constructor(props: TypographyProps) {
     const { variant, children, className, onclick } = props;
     this.variant = variant;
     this.children = children;
@@ -7,7 +14,7 @@ class Typography {
     this.onclick = onclick;
   }
 
-  VARIANTS = {
+  VARIANTS: { [key: string]: string } = {
     h1: "h1",
     h2: "h2",
     h3: "h3",

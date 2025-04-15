@@ -1,4 +1,4 @@
-import Typography from "../../UI/Typography/index.js";
+import Typography from "../../UI/Typography/index.ts";
 
 class NotFound {
   constructor(parameters) {

@@ -1,5 +1,5 @@
-import Button from "../../UI/Button/index.js";
-import Select from "../../UI/Select/index.js";
+import Button from "../../UI/Button/index.ts";
+import Select from "../../UI/Select/index.ts";
 
 class FilterMovie {
   constructor(props) {

@@ -1,6 +1,6 @@
-import Footer from "../../container/Footer/index.js";
-import Navigation from "../../container/Navigation/index.js";
-import Typography from "../../UI/Typography/index.js";
+import Footer from "../../container/Footer/index.ts";
+import Navigation from "../../container/Navigation/index.ts";
+import Typography from "../../UI/Typography/index.ts";
 
 class AboutPage {
   constructor(parameters) {

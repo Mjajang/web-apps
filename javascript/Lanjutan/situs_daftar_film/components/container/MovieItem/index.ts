@@ -1,5 +1,5 @@
-import ImageComponent from "../../UI/Image/index.js";
-import Typography from "../../UI/Typography/index.js";
+import ImageComponent from "../../UI/Image/index.ts";
+import Typography from "../../UI/Typography/index.ts";
 
 class MovieItem {
   constructor(props) {

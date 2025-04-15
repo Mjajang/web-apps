@@ -1,5 +1,5 @@
-import Switch from "../../UI/Switch/index.js";
-import Typography from "../../UI/Typography/index.js";
+import Switch from "../../UI/Switch/index.ts";
+import Typography from "../../UI/Typography/index.ts";
 
 class Navigation {
   constructor({ setLightMode, isLightMode }) {

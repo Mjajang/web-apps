@@ -1,12 +1,16 @@
-import { fetchApi } from "../../../utils/fetchApi.js";
-import FilterMovie from "../../container/FilterMovie/index.js";
-import Footer from "../../container/Footer/index.js";
-import MovieList from "../../container/MovieList/index.js";
-import Navigation from "../../container/Navigation/index.js";
-import Button from "../../UI/Button/index.js";
-import Typography from "../../UI/Typography/index.js";
+import { fetchApi } from "../../../utils/fetchApi.ts";
+import FilterMovie from "../../container/FilterMovie/index.ts";
+import Footer from "../../container/Footer/index.ts";
+import MovieList from "../../container/MovieList/index.ts";
+import Navigation from "../../container/Navigation/index.ts";
+import Button from "../../UI/Button/index.ts";
+import Typography from "../../UI/Typography/index.ts";
+import { HomeState } from "./home.types.ts";
 
 class Homepage {
+  state: HomeState;
+  homeContainer: HTMLElement;
+
   constructor() {
     this.state = {
       count: 0,
@@ -36,7 +40,7 @@ class Homepage {
     }
   }
 
-  setState(newState) {
+  setState(newState: any) {
     this.state = { ...this.state, ...newState };
     this.render();
   }
@@ -80,16 +84,14 @@ class Homepage {
     this.setState({ isLoading: false });
   }
 
-  loadMoreMovie(params) {
+  loadMoreMovie(params: string) {
     this.setState({ isLoading: true });
     if (params === "upcoming") {
-      const nextPage = this.state.page + 1;
-      this.setState({ page: nextPage });
-      this.getUpcomingMovies(nextPage, "load");
+      this.setState({ page: this.state.page + 1 });
+      this.getDataMovies(this.state.page + 1, "load");
     } else {
-      const nextMoviePage = this.state.moviePage + 1;
-      this.setState({ moviePage: nextMoviePage });
-      this.getYearMovies(nextMoviePage, "load");
+      this.setState({ moviePage: this.state.moviePage + 1 });
+      this.getDataMovies(this.state.moviePage + 1, "load");
     }
   }
 
@@ -101,7 +103,7 @@ class Homepage {
       document.body.className = "body-container";
     }
     const navigation = new Navigation({
-      setLightMode: (value) => this.setState({ isLightMode: value }),
+      setLightMode: (value: boolean) => this.setState({ isLightMode: value }),
       isLightMode: this.state.isLightMode,
     });
     const title = new Typography({ variant: "h1", children: "Movie Web" });
@@ -116,8 +118,8 @@ class Homepage {
     this.homeContainer.appendChild(
       new FilterMovie({
         submitFilter: () => this.getDataMovies(),
-        setType: (value) => this.setState({ filterType: value }),
-        setYear: (value) => this.setState({ filterYear: value }),
+        setType: (value: string) => this.setState({ filterType: value }),
+        setYear: (value: string) => this.setState({ filterYear: value }),
         type: this.state.filterType,
         year: this.state.filterYear,
         isLoading: this.state.isLoading,
