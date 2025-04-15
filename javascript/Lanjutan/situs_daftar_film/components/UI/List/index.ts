@@ -1,5 +1,8 @@
+import ListProps from "./list.types";
+
 class ListComponent {
-  constructor(props) {
+  listItems: string[];
+  constructor(props: ListProps) {
     const { items } = props;
     this.listItems = items;
   }

@@ -1,5 +1,12 @@
+import SkeletonProps from "./skeleton.types";
+
 class Skeleton {
-  constructor({ width, height }) {
+  skeletonContainer: HTMLDivElement;
+  skeletonChild: HTMLDivElement;
+  width: string;
+  height: string;
+
+  constructor({ width, height }: SkeletonProps) {
     this.width = width;
     this.height = height;
 

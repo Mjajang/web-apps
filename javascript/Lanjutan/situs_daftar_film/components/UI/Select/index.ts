@@ -1,5 +1,12 @@
+import SelectProps from "./select.types";
+
 class Select {
-  constructor(props) {
+  options: { value: string; text: string }[];
+  selectedValue: string;
+  onChange: (value: string) => void;
+  width: string;
+
+  constructor(props: SelectProps) {
     const { options, selectedValue, onChange, width } = props;
     this.options = options;
     this.selectedValue = selectedValue;
@@ -21,7 +28,8 @@ class Select {
       select.appendChild(optionElement);
     });
     select.addEventListener("change", (event) => {
-      this.onChange(event.target.value);
+      const target = event.target as HTMLSelectElement | null;
+      if (target) this.onChange(target.value);
     });
 
     return select;

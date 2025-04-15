@@ -1,16 +1,23 @@
+import SwitchProps from "./switch.types";
+
 class Switch {
-  constructor({ setLightMode, isChecked }) {
-    this.switchButton = document.createElement("input");
+  switchButton: HTMLInputElement;
+  switchLabel: HTMLLabelElement;
+  switchContainer: HTMLDivElement;
+  setLightMode: (isChecked: boolean) => void;
+
+  constructor({ setLightMode, isChecked }: SwitchProps) {
+    this.switchButton = document.createElement("input") as HTMLInputElement;
     this.switchButton.type = "checkbox";
     this.switchButton.id = "switch-toggle";
     this.switchButton.className = "switch-toggle";
     this.switchButton.checked = isChecked;
 
-    this.switchLabel = document.createElement("label");
+    this.switchLabel = document.createElement("label") as HTMLLabelElement;
     this.switchLabel.htmlFor = "switch-toggle";
     this.switchLabel.className = "switch-label";
 
-    this.switchContainer = document.createElement("div");
+    this.switchContainer = document.createElement("div") as HTMLDivElement;
     this.switchContainer.className = "switch-container";
     this.switchContainer.appendChild(this.switchButton);
     this.switchContainer.appendChild(this.switchLabel);
@@ -26,7 +33,7 @@ class Switch {
     });
   }
 
-  onChange(isChecked) {
+  onChange(isChecked: boolean) {
     // console.log("Switch state changed", isChecked);
     this.setLightMode(isChecked);
   }

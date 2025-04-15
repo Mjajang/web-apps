@@ -1,5 +1,13 @@
+import ButtonProps from "./button.types";
+
 class Button {
-  constructor(props) {
+  variant: string;
+  text: string | HTMLElement;
+  disabled?: boolean;
+  onclick?: () => void;
+  className?: string;
+
+  constructor(props: ButtonProps) {
     const { text, variant, onclick, disabled, className } = props;
     this.handleClick = this.handleClick.bind(this);
     this.variant = variant;
@@ -25,7 +33,7 @@ class Button {
       button.appendChild(this.text);
     }
     button.className = `btn btn-${this.variant} ${this.className}`;
-    button.disabled = this.disabled;
+    button.disabled = this.disabled ?? false;
     button.addEventListener("click", this.handleClick.bind(this));
     return button;
   }
