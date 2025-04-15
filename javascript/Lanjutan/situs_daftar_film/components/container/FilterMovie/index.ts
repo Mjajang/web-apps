@@ -1,8 +1,17 @@
 import Button from "../../UI/Button/index.ts";
 import Select from "../../UI/Select/index.ts";
+import FilterMovieProps from "./filter_movie.types.ts";
 
 class FilterMovie {
-  constructor(props) {
+  filterContainer: HTMLDivElement;
+  submitFilter: () => void;
+  isLoading: boolean;
+  type: string;
+  year: string;
+  setType: (value: string) => void;
+  setYear: (value: string) => void;
+
+  constructor(props: FilterMovieProps) {
     const { submitFilter, isLoading, type, year, setType, setYear } = props;
     this.submitFilter = submitFilter;
     this.isLoading = isLoading;

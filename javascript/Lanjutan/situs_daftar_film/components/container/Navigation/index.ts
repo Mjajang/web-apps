@@ -1,8 +1,13 @@
 import Switch from "../../UI/Switch/index.ts";
 import Typography from "../../UI/Typography/index.ts";
+import NavProps from "./nav.types.ts";
 
 class Navigation {
-  constructor({ setLightMode, isLightMode }) {
+  navigationContainer: HTMLDivElement;
+  setLightMode: (value: boolean) => void;
+  isLightMode: boolean;
+
+  constructor({ setLightMode, isLightMode }: NavProps) {
     this.navigationContainer = document.createElement("div");
     this.navigationContainer.className = "navigation-container";
     this.setLightMode = setLightMode;
@@ -12,7 +17,7 @@ class Navigation {
   render() {
     const containerLeft = document.createElement("div");
     containerLeft.className = "nav-container-left";
-    const title = new Typography({ variant: "h1", children: "FASTMOVIE" });
+    const title = new Typography({ variant: "h1", children: "FASTMOVIE", className: "" });
     containerLeft.appendChild(title.render());
     const homeLink = new Typography({
       variant: "h5",
@@ -20,6 +25,7 @@ class Navigation {
       onclick: () => {
         window.location.hash = "";
       },
+      className: "",
     });
     containerLeft.appendChild(homeLink.render());
     const aboutLink = new Typography({
@@ -28,6 +34,7 @@ class Navigation {
       onclick: () => {
         window.location.hash = "about";
       },
+      className: "",
     });
     this.navigationContainer.appendChild(containerLeft);
     containerLeft.appendChild(aboutLink.render());

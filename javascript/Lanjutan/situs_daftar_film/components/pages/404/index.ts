@@ -1,7 +1,9 @@
 import Typography from "../../UI/Typography/index.ts";
 
 class NotFound {
-  constructor(parameters) {
+  notfoundContainer: HTMLDivElement;
+
+  constructor() {
     this.notfoundContainer = document.createElement("div");
   }
 

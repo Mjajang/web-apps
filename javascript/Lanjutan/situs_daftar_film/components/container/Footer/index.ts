@@ -1,7 +1,9 @@
 import Typography from "../../UI/Typography/index.ts";
 
 class Footer {
-  constructor(parameters) {
+  footerContainer: HTMLDivElement;
+
+  constructor() {
     this.footerContainer = document.createElement("div");
   }
 
