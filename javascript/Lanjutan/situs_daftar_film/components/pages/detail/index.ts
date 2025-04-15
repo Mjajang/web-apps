@@ -5,12 +5,16 @@ import ImageComponent from "../../UI/Image/index.ts";
 import Skeleton from "../../UI/Skeleton/index.ts";
 import Navigation from "../../container/Navigation/index.ts";
 import Footer from "../../container/Footer/index.ts";
+import DetailProps from "./detail.types.ts";
 
 class Detailpage {
-  constructor(props) {
+  state: DetailProps;
+  detailContainer: HTMLDivElement;
+
+  constructor() {
     this.state = {
-      selectedItem: {},
-      movieRate: {},
+      selectedItem: null,
+      movieRate: null,
       isLoading: true,
       isLightMode: false,
     };
@@ -28,7 +32,7 @@ class Detailpage {
     this.render();
   }
 
-  setState(newState) {
+  setState(newState: DetailProps) {
     this.state = { ...this.state, ...newState };
     this.render();
   }
@@ -38,32 +42,32 @@ class Detailpage {
     const urlPath = `titles/${queryString}`;
     fetchApi("GET", urlPath).then((result) => {
       // console.log(result);
-      this.setState({ selectedItem: result.results });
+      this.setState({ ...this.state, selectedItem: result.results });
     });
 
     const urlRating = `titles/${queryString}/ratings`;
     fetchApi("GET", urlRating).then((result) => {
       // console.log(result);
-      this.setState({ movieRate: result.results });
+      this.setState({ ...this.state, movieRate: result.results });
     });
-    this.setState({ isLoading: false });
+    this.setState({ ...this.state, isLoading: false });
   }
 
   render() {
     this.detailContainer.innerHTML = "";
     const navigation = new Navigation({
-      setLightMode: (value) => this.setState({ isLightMode: value }),
+      setLightMode: (value) => this.setState({ ...this.state, isLightMode: value }),
       isLightMode: this.state.isLightMode,
     });
     this.detailContainer.appendChild(navigation.render());
     if (
-      Object.keys(this.state.selectedItem).length > 0 &&
-      Object.keys(this.state.movieRate).length > 0
+      Object.keys(this.state.selectedItem ?? []).length > 0 &&
+      Object.keys(this.state.movieRate ?? []).length > 0
     ) {
       this.detailContainer.appendChild(
         new ImageComponent({
-          src: this.state.selectedItem.primaryImage?.url,
-          alt: this.state.selectedItem.primaryImage?.caption.plainText,
+          src: this.state.selectedItem?.primaryImage?.url ?? "",
+          alt: this.state.selectedItem?.primaryImage?.caption.plainText ?? "",
           classname: "img-detail-cover",
         }).render()
       );
@@ -72,8 +76,8 @@ class Detailpage {
       contentContainer.className = "content-container";
       contentContainer.appendChild(
         new ImageComponent({
-          src: this.state.selectedItem.primaryImage?.url,
-          alt: this.state.selectedItem.primaryImage?.caption.plainText,
+          src: this.state.selectedItem?.primaryImage?.url ?? "",
+          alt: this.state.selectedItem?.primaryImage?.caption.plainText ?? "",
           classname: "img-detail",
         }).render()
       );
@@ -83,25 +87,29 @@ class Detailpage {
       contentDetail.appendChild(
         new Typography({
           variant: "h1",
-          children: `Title: ${this.state.selectedItem.originalTitleText.text}`,
+          children: `Title: ${this.state.selectedItem?.originalTitleText.text}`,
+          className: "",
         }).render()
       );
       contentDetail.appendChild(
         new Typography({
           variant: "h2",
-          children: `Release Year: ${this.state.selectedItem.releaseYear.year}`,
+          children: `Release Year: ${this.state.selectedItem?.releaseYear.year}`,
+          className: "",
         }).render()
       );
       contentDetail.appendChild(
         new Typography({
           variant: "h2",
-          children: `Rating: ${this.state.movieRate.averageRating}`,
+          children: `Rating: ${this.state.movieRate?.averageRating}`,
+          className: "",
         }).render()
       );
       contentDetail.appendChild(
         new Typography({
           variant: "h2",
-          children: `Voters Count: ${this.state.movieRate.numVotes}`,
+          children: `Voters Count: ${this.state.movieRate?.numVotes}`,
+          className: "",
         }).render()
       );
 

@@ -1,9 +1,12 @@
 import ImageComponent from "../../UI/Image/index.ts";
 import Typography from "../../UI/Typography/index.ts";
+import MovieItemProps from "./movie_item.types.ts";
 
 class MovieItem {
-  constructor(props) {
-    const { movie } = props;
+  movie: MovieItemProps;
+  movieContainer: HTMLDivElement;
+  constructor(movie: MovieItemProps) {
+    this.movie = movie;
     this.movieContainer = document.createElement("div");
     this.movie = movie;
     this.movieContainer.className = "movie-card";
@@ -29,10 +32,14 @@ class MovieItem {
     this.movieContainer.appendChild(divInfo);
 
     divInfo.appendChild(
-      new Typography({ variant: "h4", children: this.movie.titleText.text }).render()
+      new Typography({ variant: "h4", children: this.movie.titleText.text, className: "" }).render()
     );
     divInfo.appendChild(
-      new Typography({ variant: "h5", children: this.movie.releaseYear.year }).render()
+      new Typography({
+        variant: "h5",
+        children: this.movie.releaseYear.year.toString(),
+        className: "",
+      }).render()
     );
     return this.movieContainer;
   }
