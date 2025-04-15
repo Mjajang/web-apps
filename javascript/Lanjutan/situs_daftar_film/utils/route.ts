@@ -1,7 +1,7 @@
-import Homepage from "../components/pages/homepage/index.ts";
-import Detailpage from "../components/pages/detail/index.ts";
-import AboutPage from "../components/pages/about/index.ts";
-import NotFound from "../components/pages/404/index.ts";
+import Homepage from "../components/pages/homepage/index.js";
+import Detailpage from "../components/pages/detail/index.js";
+import AboutPage from "../components/pages/about/index.js";
+import NotFound from "../components/pages/404/index.js";
 const ROUTES: { [key: string]: HTMLElement } = {
   home: new Homepage().render(),
   detail: new Detailpage().render(),

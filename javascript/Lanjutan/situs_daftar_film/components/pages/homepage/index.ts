@@ -1,11 +1,11 @@
-import { fetchApi } from "../../../utils/fetchApi.ts";
-import FilterMovie from "../../container/FilterMovie/index.ts";
-import Footer from "../../container/Footer/index.ts";
-import MovieList from "../../container/MovieList/index.ts";
-import Navigation from "../../container/Navigation/index.ts";
-import Button from "../../UI/Button/index.ts";
-import Typography from "../../UI/Typography/index.ts";
-import { HomeState } from "./home.types.ts";
+import { fetchApi } from "../../../utils/fetchApi.js";
+import FilterMovie from "../../container/FilterMovie/index.js";
+import Footer from "../../container/Footer/index.js";
+import MovieList from "../../container/MovieList/index.js";
+import Navigation from "../../container/Navigation/index.js";
+import Button from "../../UI/Button/index.js";
+import Typography from "../../UI/Typography/index.js";
+import { HomeState } from "./home.types.js";
 
 class Homepage {
   state: HomeState;
@@ -106,7 +106,7 @@ class Homepage {
       setLightMode: (value: boolean) => this.setState({ isLightMode: value }),
       isLightMode: this.state.isLightMode,
     });
-    const title = new Typography({ variant: "h1", children: "Movie Web" });
+    const title = new Typography({ variant: "h1", children: "Movie Web", className: "" });
     const subTitle = new Typography({
       variant: "h2",
       children: "Using Vanilla",
@@ -125,7 +125,11 @@ class Homepage {
         isLoading: this.state.isLoading,
       }).render()
     );
-    const titleUpcoming = new Typography({ variant: "h1", children: "Upcoming Movie" });
+    const titleUpcoming = new Typography({
+      variant: "h1",
+      children: "Upcoming Movie",
+      className: "",
+    });
     this.homeContainer.appendChild(titleUpcoming.render());
     this.homeContainer.appendChild(
       new MovieList({
@@ -134,7 +138,11 @@ class Homepage {
         isLoading: this.state.isLoading,
       }).render()
     );
-    const titleThisYear = new Typography({ variant: "h1", children: "Movie of The Year" });
+    const titleThisYear = new Typography({
+      variant: "h1",
+      children: "Movie of The Year",
+      className: "",
+    });
     this.homeContainer.appendChild(titleThisYear.render());
     this.homeContainer.appendChild(
       new MovieList({

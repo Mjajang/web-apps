@@ -1,6 +1,6 @@
-import ImageComponent from "../../UI/Image/index.ts";
-import Typography from "../../UI/Typography/index.ts";
-import MovieItemProps from "./movie_item.types.ts";
+import ImageComponent from "../../UI/Image/index.js";
+import Typography from "../../UI/Typography/index.js";
+import MovieItemProps from "./movie_item.types.js";
 
 class MovieItem {
   movie: MovieItemProps;

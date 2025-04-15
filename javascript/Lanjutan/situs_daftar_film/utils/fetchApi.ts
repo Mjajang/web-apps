@@ -1,4 +1,4 @@
-import config from "../config.ts";
+import config from "../config.js";
 export const fetchApi = async (method: string, path: string) => {
   try {
     const response = await fetch(`${config.BASE_URL}${path}`, {

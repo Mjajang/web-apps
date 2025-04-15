@@ -1,4 +1,4 @@
-import { route } from "./utils/route.ts";
+import { route } from "./utils/route.js";
 
 const handleHash = () => {
   const hash = window.location.hash.substring(1); // remove #

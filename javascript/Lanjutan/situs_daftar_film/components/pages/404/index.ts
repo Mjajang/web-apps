@@ -1,4 +1,4 @@
-import Typography from "../../UI/Typography/index.ts";
+import Typography from "../../UI/Typography/index.js";
 
 class NotFound {
   notfoundContainer: HTMLDivElement;

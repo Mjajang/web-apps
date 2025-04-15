@@ -1,6 +1,6 @@
-import Button from "../../UI/Button/index.ts";
-import Select from "../../UI/Select/index.ts";
-import FilterMovieProps from "./filter_movie.types.ts";
+import Button from "../../UI/Button/index.js";
+import Select from "../../UI/Select/index.js";
+import FilterMovieProps from "./filter_movie.types.js";
 
 class FilterMovie {
   filterContainer: HTMLDivElement;
