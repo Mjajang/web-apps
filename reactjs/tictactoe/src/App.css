@@ -1,0 +1,35 @@
+#root {
+  max-width: 1280px;
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
+  /* text-align: center; */
+}
+.container {
+  display: flex;
+}
+.board {
+  margin-right: 20px;
+}
+.square {
+  width: 120px;
+  height: 120px;
+  color: black;
+  background-color: #fff;
+  margin: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.game-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.button {
+  display: block;
+  margin-bottom: 10px;
+}
