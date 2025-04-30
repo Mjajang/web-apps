@@ -5,6 +5,7 @@ import "./App.css";
 import Board from "./components/Board";
 import Gameinfo from "./components/Gameinfo";
 import calculateWinner from "./utils/Calculatewinner";
+import Timeline from "./components/Timeline";
 
 function App() {
   // const [isXNext, setIsXNext] = useState(false);
@@ -15,10 +16,11 @@ function App() {
       isXNext: false,
     },
   ]);
+  const [currentStep, setCurrentStep] = useState(0);
 
-  const board = timeline[timeline.length - 1].board;
+  const board = timeline[currentStep].board;
   const winner = calculateWinner(board);
-  const isXNext = timeline[timeline.length - 1].isXNext;
+  const isXNext = timeline[currentStep].isXNext;
 
   const handleReset = () => {
     // setBoard(Array(9).fill(null));
@@ -36,12 +38,13 @@ function App() {
     newBoard[index] = isXNext ? "X" : "O";
 
     setTimeline([
-      ...timeline,
+      ...timeline.splice(0, currentStep + 1),
       {
         board: newBoard,
         isXNext: !isXNext,
       },
     ]);
+    setCurrentStep(currentStep + 1);
     /* setBoard((currBoard) => {
       const newBoard = [...currBoard];
 
@@ -57,10 +60,17 @@ function App() {
 
     console.log("Square clicked"); */
   };
+
+  const handleTimelineItemClick = (index) => {
+    setCurrentStep(index);
+  };
   return (
     <div className="container">
       <Board board={board} onAction={handleSquareClick} />
-      <Gameinfo winner={winner} isXNext={isXNext} onReset={handleReset} timeline={timeline} />
+      <div>
+        <Gameinfo winner={winner} isXNext={isXNext} onReset={handleReset} />
+        <Timeline timeline={timeline} onTimelineItemClick={handleTimelineItemClick} />
+      </div>
     </div>
   );
 }
